@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "04044b66-f3bd-4bc3-b022-41d3c53d3839",
 		"name": "homework_2",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20724325"
 	},
 	"item": [
 		{
@@ -53,33 +54,36 @@
 			"name": "2",
 			"event": [
 				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
 					"listen": "test",
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"name\", function () {\r",
-							"    var jsonData = pm.response.json(Den);\r",
-							"    pm.expect(jsonData.value).to.eql(Den;\r",
+							"\r",
+							"pm.test(\"Value name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.name).to.eql(\"Den4iz\");\r",
 							"});\r",
-							"pm.test(\"age\", function () {\r",
-							"    var jsonData = pm.response.json(23);\r",
-							"    pm.expect(jsonData.value).to.eql(23);\r",
+							"\r",
+							"pm.test(\"Value age\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.age).to.eql(\"27\");\r",
 							"});\r",
-							"pm.test(\"salary\", function () {\r",
-							"    var jsonData = pm.response.json(2323);\r",
-							"    pm.expect(jsonData.value).to.eql(2323);\r",
+							"\r",
+							"pm.test(\"Value salary\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.salary).to.eql(1337);\r",
 							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -93,17 +97,17 @@
 					"formdata": [
 						{
 							"key": "name",
-							"value": "Den",
+							"value": "Den4iz",
 							"type": "text"
 						},
 						{
 							"key": "age",
-							"value": "33",
+							"value": "27",
 							"type": "text"
 						},
 						{
 							"key": "salary",
-							"value": "2323",
+							"value": "1337",
 							"type": "text"
 						}
 					]
