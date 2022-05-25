@@ -291,7 +291,7 @@
 							"    pm.expect(Resp.name).to.eql(Requ.name);\r",
 							"});\r",
 							"pm.test(\"Check age\", function () {\r",
-							"    pm.expect(Resp.age).to.eql(Requ.age);\r",
+							"    pm.expect(Resp.age).to.eql(+Requ.age);\r",
 							"});\r",
 							"\r",
 							"// Вывести в консоль параметр salary из request.\r",
@@ -301,22 +301,21 @@
 							"// Вывести в консоль 2-й элемент параметра salary параметр salary из response.\r",
 							"console.log(Requ.salary)\r",
 							"console.log(Resp.salary)\r",
-							"var mas = String(Resp.salary)\r",
-							"console.log(mas[0])\r",
-							"console.log(mas[1])\r",
-							"console.log(mas[2])\r",
+							"console.log(Resp.salary[0])\r",
+							"console.log(Resp.salary[1])\r",
+							"console.log(Resp.salary[2])\r",
 							"\r",
 							"// Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)\r",
 							"// Проверить, что 1-й элемент параметра salary равен salary*2 из request (salary забрать из request.)\r",
 							"// Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request.)\r",
 							"pm.test(\"Check value salary[0]\", function () {\r",
-							"    pm.expect(mas[0]).to.eql(Requ.salary[0]);\r",
+							"    pm.expect(Resp.salary[0]).to.eql(+Requ.salary);\r",
 							"});\r",
-							"pm.test(\"Check vakue salary[1]\", function () {\r",
-							"    pm.expect(mas[1]).to.eql(Requ.salary*2);\r",
+							"pm.test(\"Check value salary[1]\", function () {\r",
+							"    pm.expect(+Resp.salary[1]).to.eql(Requ.salary*2);\r",
 							"});\r",
 							"pm.test(\"Check value salary[2]\", function () {\r",
-							"    pm.expect(mas[2]).to.eql(Requ.salary*3);\r",
+							"    pm.expect(+Resp.salary[2]).to.eql(Requ.salary*3);\r",
 							"});\r",
 							"\r",
 							"// Создать в окружении переменную name\r",
@@ -326,12 +325,9 @@
 							"// Передать в окружение переменную age\r",
 							"// Передать в окружение переменную salary\r",
 							"// Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.\r",
-							"var sp = mas.length\r",
-							"var mas1 = mas.split('')\r",
-							"mas1[0] == 1;\r",
-							"while(1 < 5){\r",
-							"    1++\r",
-							"    console.log(nas1)}"
+							"for(x = 0; x < 3; x++){\r",
+							"    var i = Resp.salary[x]\r",
+							"    console.log(i)}"
 						],
 						"type": "text/javascript"
 					}
@@ -341,7 +337,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://162.55.220.72:5005/object_info_3?name=Sergay&age=39&salary=1211",
+					"raw": "http://162.55.220.72:5005/object_info_4?name=Sergay&age=39&salary=1211",
 					"protocol": "http",
 					"host": [
 						"162",
@@ -351,7 +347,7 @@
 					],
 					"port": "5005",
 					"path": [
-						"object_info_3"
+						"object_info_4"
 					],
 					"query": [
 						{
