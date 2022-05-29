@@ -456,7 +456,14 @@
 							"});\r",
 							"pm.test(\"Check u_salary_5_years eql salary*4.2 from request\", function () {\r",
 							"    pm.expect(Res.person.u_salary_5_years).to.eql(+Req1.salary * 4.2);\r",
-							"});"
+							"});\r",
+							"\r",
+							"// ***Написать цикл который выведет в консоль по порядку элементы списка из параметра person.\r",
+							"var key = Object.keys(Res.person)\r",
+							"console.log(key)\r",
+							"for(x = 0; x < 3; x++){\r",
+							"    var i = key[x]\r",
+							"    console.log(i)}"
 						],
 						"type": "text/javascript"
 					}
