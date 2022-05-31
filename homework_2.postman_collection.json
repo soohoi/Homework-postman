@@ -22,8 +22,15 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"//http://162.55.220.72:5005/first\r",
+							"//Отправить запрос.\r",
+							"//Статус код 200\r",
+							"//Проверить, что в body приходит правильный string.\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Check body\", function () {\r",
+							"    pm.response.to.have.body('This is the first responce from server!');\r",
 							"});"
 						],
 						"type": "text/javascript"
